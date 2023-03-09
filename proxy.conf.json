@@ -1,0 +1,16 @@
+{
+  "/gateway": {
+    "target": "https://jabilbus.jblapps.com/",
+    "changeOrigin": true
+  },
+
+  "/language": {
+    "target": "https://jabilbus.jblapps.com/",
+    "changeOrigin": true
+  },
+
+  "/api": {
+    "target": "http://cnhuam0itpoc83:44055/",
+    "changeOrigin": true
+  }
+}

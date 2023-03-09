@@ -1,0 +1,29 @@
+{
+  "MenuTree": {
+    "data": [
+      {
+        "menuInfo": {
+          "id": "1",
+          "title": "demo",
+          "path": "/",
+          "icon": "System",
+          "sort": 1
+        },
+        "menuChildren": [
+          {
+            "menuInfo": {
+              "id": "2",
+              "title": "page1",
+              "path": "/demo/page1",
+              "icon": "System",
+              "sort": 2
+            },
+            "menuChildren": []
+          }
+        ]
+      }
+    ]
+  },
+
+  "MenuTreeKeys": { "data": [{ "menuInfoId": "1" }, { "menuInfoId": "2" }] }
+}
