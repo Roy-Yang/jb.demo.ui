@@ -1,2 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@jabil/ui-styles/dist/main.css';
+
+.content {
+  position: relative;
+  height: 100%;
+  border-radius: 12px;
+  background: #fff;
+}

@@ -1,9 +1,23 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { DemoRoutingModule } from './demo-routing.module'
+import { DemoRoutingModule } from './demo-routing.module';
+// primeng
+import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+
 import { Page1Component } from './page1/page1.component';
-import { TranslationApiService, TranslationApiLoader } from 'jabil-bus-lib';
+import {
+  TranslationApiService,
+  TranslationApiLoader,
+  LoadingModule,
+  QRModule,
+  VideoDialogModule,
+  SecondToHourModule,
+  FormatTimeModule,
+} from 'jabil-bus-lib';
 
 const routes: Routes = [{ path: '', component: Page1Component }];
 export function translationApiLoaderFactory(api: TranslationApiService) {
@@ -12,6 +26,19 @@ export function translationApiLoaderFactory(api: TranslationApiService) {
 
 @NgModule({
   imports: [
+    CommonModule,
+    FormsModule,
+
+    LoadingModule,
+    QRModule,
+    VideoDialogModule,
+    SecondToHourModule,
+    FormatTimeModule,
+
+    // primeng
+    ButtonModule,
+    DialogModule,
+
     DemoRoutingModule,
     RouterModule.forChild(routes),
 
