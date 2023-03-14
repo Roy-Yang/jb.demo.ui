@@ -36,12 +36,16 @@ import {
 } from 'jabil-bus-lib';
 
 const routes: Routes = [{ path: '', component: Page1Component }];
+
+//todo Temporarily add translation data; Remove after adding to the server
 import en from './common/en.json';
 import zh from './common/zh.json';
 export function translationApiLoaderFactory(api: TranslationApiService) {
   const currLang = localStorage.getItem('lang') || 'en';
   const langJson = currLang === 'en' ? en : zh;
   return new TranslationApiLoader(api, langJson);
+
+  // return new TranslationApiLoader(api);
 }
 
 @NgModule({

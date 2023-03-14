@@ -1,12 +1,14 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { WebsocketService } from 'jabil-bus-lib';
 
 @Component({
   selector: 'app-page1',
   templateUrl: './page1.component.html',
   styleUrls: ['./page1.component.scss'],
+  providers: [WebsocketService]
 })
-export class Page1Component implements OnInit {
+export class Page1Component implements OnInit, OnDestroy {
   loading: boolean = false;
 
   QRVisible: boolean = false;
@@ -14,17 +16,33 @@ export class Page1Component implements OnInit {
   @ViewChild('qr') qr: any | undefined;
 
   videoVisible: boolean = false;
-  videoSrc: string = '' +
-    ''
+  videoSrc: string = '';
+  webSocket: any = null;
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private websocketService: WebsocketService) {
     this.translate.use(localStorage.getItem('lang') || 'en');
     this.translate.get('download').subscribe((res: string) => {
       console.log(res);
     });
   }
 
-  ngOnInit(): void {}
+  // websocket demo
+  ngOnInit(): void {
+    // init(url: string, params: any, resFunc: any, isReConnect?: boolean): any;
+    // this.webSocket = this.websocketService.init(
+    //   'wss url',
+    //   {},
+    //   (data: any) => {
+    //     console.log(data)
+    //   },
+    //   true
+    // );
+  }
+
+  public ngOnDestroy() {
+    // this.webSocket.noReConnect = true;
+    // this.webSocket?.close();
+  }
 
   // ----------------------Loading----------------------
   showLoading() {
