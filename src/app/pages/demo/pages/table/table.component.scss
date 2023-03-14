@@ -1,0 +1,60 @@
+p-table {
+  height: calc(100% - 50px);
+  display: block;
+
+  .t-caption {
+    position: relative;
+    top: -5px;
+    display: flex;
+    justify-content: space-between;
+
+    input,
+    label {
+      margin-right: 12px;
+    }
+
+    .btn-group {
+      button {
+        margin-left: 30px;
+      }
+    }
+
+    .formgroup-inline {
+      margin-bottom: 0;
+    }
+  }
+
+  ::ng-deep {
+    table {
+      width: 100%;
+    }
+
+    .p-datatable {
+      height: 100%;
+
+      .p-datatable-header {
+        border: none;
+        background: #fff;
+        padding-right: 0;
+      }
+
+      .p-datatable-wrapper {
+        height: calc(100% - 100px);
+      }
+    }
+
+    td .p-button {
+      padding: 0 8px;
+
+      &.enable {
+        background: #147ad9;
+        color: #f3f8fd;
+      }
+
+      &.disable {
+        background: rgba(20, 122, 217, 0.5);
+        color: #fff;
+      }
+    }
+  }
+}

@@ -1,13 +1,13 @@
 <div class="content overflow-y-auto">
   <p>page1 works!</p>
-  <p>translate: {{ 'download' | translate }}</p>
+  <p>translate: {{ 'test.demo' | translate }}</p>
   <p>
-    <label>1000秒转换小时，分，秒：</label>
-    {{ 1000 | SecondToHour }}
+    <label>10000 seconds transform to hour：</label>
+    {{ 10000 | SecondToHour }}
   </p>
 
   <p>
-    <label>2023-03-08T10:30:20 转化为标准时间到分：</label>
+    <label>2023-03-08T10:30:20 transform：</label>
     {{ '2023-03-08T10:30:20' | FormatTime }}
   </p>
   <p>
@@ -17,12 +17,12 @@
   </p>
   <p>
     <button pButton pRipple class="primary-btn" (click)="showQR()">
-      二维码
+      QR
     </button>
   </p>
   <p>
     <button pButton pRipple class="primary-btn" (click)="showVideo()">
-      视频预览
+      Preview Video
     </button>
   </p>
 </div>
@@ -37,7 +37,7 @@
   [resizable]="false"
   styleClass="p-fluid">
   <ng-template pTemplate="header">
-    <h3 class="text-center w-100">二维码 DEMO</h3>
+    <h3 class="text-center w-100">DEMO</h3>
   </ng-template>
   <jabil-qr #qr *ngIf="QRVisible" [field]="qrData"></jabil-qr>
   <p-footer>

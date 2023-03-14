@@ -1,0 +1,12 @@
+:host {
+  .editor {
+    width: 100%;
+    height: calc(100% - 80px);
+    flex: 1;
+    flex-direction: column;
+
+    #editor {
+      height: 100%;
+    }
+  }
+}

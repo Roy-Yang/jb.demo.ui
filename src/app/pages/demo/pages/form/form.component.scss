@@ -1,0 +1,63 @@
+:host{
+  height: 100%;
+
+  .content {
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 48px;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  label {
+    min-width: 100px;
+    text-align: right;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 12px;
+    color: #666;
+  }
+
+  &.zh {
+    label {
+      min-width: 100px;
+    }
+  }
+
+  .label-top {
+    flex-direction: column;
+    width: 200px;
+    align-items: baseline;
+
+    ::ng-deep {
+      .p-dropdown,
+      .p-multiselect {
+        width: 350px;
+      }
+
+      .p-inputswitch {
+        top: 5px;
+      }
+    }
+  }
+
+  .cancel {
+    margin-right: 40px;
+    margin-top: 50px;
+  }
+
+  ::ng-deep {
+    .p-multiselect, .input-text, .ant-cascader, .p-inputnumber-input, .p-calendar  {
+      width: 350px;
+    }
+
+    .ant-select-selector {
+      background: #f5f5f5!important;
+      border: none!important;
+    }
+  }
+}

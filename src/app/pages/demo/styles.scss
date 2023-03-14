@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+.content {
+  position: relative;
+  height: 100%;
+  border-radius: 12px;
+  background: #fff;
+}
+
+
+
+@import '~ng-zorro-antd/src/style/index.min.css';
+@import '~ng-zorro-antd/select/style/index.min.css';
+@import '~ng-zorro-antd/upload/style/index.min.css';
+@import '~ng-zorro-antd/cascader/style/index.min.css';
+

@@ -1,0 +1,157 @@
+<div class="content">
+  <div class="p-formgrid grid">
+    <div class="field col flex label-top flex-row format">
+      <label><span class="valid-pre">*</span>{{'inputText' | translate}}</label>
+      <input
+        type="text"
+        class="input-text"
+        pInputText
+        maxlength="50"
+        [placeholder]="'inputText'| translate"
+        [(ngModel)]="formData.a"
+        [ngClass]="{ 'ng-invalid': formData.invalid && !formData.a }" />
+    </div>
+  </div>
+  <div class="p-formgrid grid">
+    <div class="field col flex label-top flex-row format">
+      <label>{{'cascader' | translate}}</label>
+      <div class="flex">
+        <nz-cascader
+          nzChangeOnSelect
+          [nzOptions]="cascaderTreeData"
+          [(ngModel)]="formData.b"
+          nzLabelProperty="label"
+          nzValueProperty="value">
+        </nz-cascader>
+      </div>
+    </div>
+  </div>
+  <div class="p-formgrid grid">
+    <div class="field col flex label-top flex-row format">
+      <label>{{'multiSelect' | translate}}</label>
+      <p-multiSelect
+        [emptyMessage]="'no.results.found' | translate"
+        [options]="multiList"
+        [showToggleAll]="false"
+        [(ngModel)]="formData.d"
+        [filter]="true"
+        optionLabel="name"
+        optionValue="id"
+        appendTo="body"
+        [defaultLabel]="'multiSelect' | translate"
+        class="multiselect-custom-virtual-scroll">
+      </p-multiSelect>
+    </div>
+  </div>
+  <div class="p-formgrid grid">
+    <div class="field col flex label-top flex-row format">
+      <label>{{'dropdown' | translate}}</label>
+      <p-dropdown
+        [emptyMessage]="'no.results.found' | translate"
+        [autoDisplayFirst]="false"
+        [options]="dropdownList"
+        [(ngModel)]="formData.e"
+        [placeholder]="'dropdown' | translate"
+        optionLabel="name"
+        optionValue="id"></p-dropdown>
+    </div>
+  </div>
+  <div class="p-formgrid grid">
+    <div class="field col flex label-top flex-row format">
+      <label>{{'inputNumber' | translate}}</label>
+      <p-inputNumber [(ngModel)]="formData.c" mode="decimal" [min]="1" [max]="10000">
+      </p-inputNumber>
+    </div>
+  </div>
+  <div class="p-formgrid grid">
+    <div class="field col flex label-top flex-row format">
+      <label>{{'inputSwitch' |translate}}</label>
+      <p-inputSwitch [(ngModel)]="formData.f"></p-inputSwitch>
+    </div>
+  </div>
+
+  <div class="p-formgrid grid">
+    <div class="field col flex label-top flex-row format">
+      <label>{{'radioButton' | translate}}</label>
+      <div class="field-radiobutton">
+        <p-radioButton
+          name="mode"
+          value="1"
+          [(ngModel)]="formData.g"
+          inputId="scoreMode1"></p-radioButton>
+        <label style="min-width: unset" for="scoreMode1"
+          >{{'a' | translate}}
+        </label>
+      </div>
+      <div class="field-radiobutton">
+        <p-radioButton
+          name="mode"
+          value="2"
+          [(ngModel)]="formData.g"
+          inputId="scoreMode2"></p-radioButton>
+        <label style="min-width: unset" for="scoreMode2">
+          {{'b' | translate}}
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-formgrid grid">
+    <div class="field col flex label-top flex-row format">
+      <label>{{'calendar' |translate}}</label>
+      <p-calendar
+        dateFormat="yy-mm-dd"
+        [(ngModel)]="rangeDates"
+        [showButtonBar]="true"
+        [readonlyInput]="true"
+        [showTime]="true"
+        [showSeconds]="true"
+        selectionMode="range">
+        [placeholder]="'select.range.date' | translate" inputId="range"></p-calendar
+      >
+    </div>
+  </div>
+
+  <div class="p-formgrid grid">
+    <div class="field col flex label-top flex-row format">
+      <label>{{'textarea' |translate}}</label>
+      <textarea
+        style="width: 100%; height: 200px; flex: 1"
+        pInputTextarea
+        [(ngModel)]="formData.h"></textarea>
+    </div>
+  </div>
+
+  <div class="p-formgrid grid">
+    <div class="field col flex label-top flex-row format align-items-start">
+      <label>{{'upload.file' | translate}}</label>
+      <nz-upload
+        nzAction="src"
+        nzType="drag"
+        nzSize="100000"
+        nzLimit="1"
+        [nzAccept]="'.csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel'"
+        [nzFileList]="fileList"
+        (nzChange)="handleChange($event)"
+        [nzDownload]="handleDownloadFile">
+        <p class="ant-upload-text">{{'select.file' | translate}}</p>
+      </nz-upload>
+      <div style="margin-left: 30px">
+        <button pButton pRipple (click)="download()" class="primary-btn">
+          {{ 'download' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <button pButton pRipple type="button" class="p-button-outlined cancel">
+      {{ 'back' | translate }}
+    </button>
+    <button pButton pRipple (click)="submitForm()" class="primary-btn">
+      {{ 'submit' | translate }}
+    </button>
+  </div>
+</div>
+
+<p-toast position="top-center"></p-toast>

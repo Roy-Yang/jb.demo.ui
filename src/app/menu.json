@@ -15,8 +15,38 @@
               "id": "2",
               "title": "page1",
               "path": "/demo/page1",
-              "icon": "System",
+              "icon": "page1",
               "sort": 2
+            },
+            "menuChildren": []
+          },
+          {
+            "menuInfo": {
+              "id": "3",
+              "title": "form",
+              "path": "/demo/form",
+              "icon": "form",
+              "sort": 3
+            },
+            "menuChildren": []
+          },
+          {
+            "menuInfo": {
+              "id": "4",
+              "title": "table",
+              "path": "/demo/table",
+              "icon": "table",
+              "sort": 4
+            },
+            "menuChildren": []
+          },
+          {
+            "menuInfo": {
+              "id": "5",
+              "title": "quill",
+              "path": "/demo/quill",
+              "icon": "table",
+              "sort": 5
             },
             "menuChildren": []
           }
@@ -25,5 +55,13 @@
     ]
   },
 
-  "MenuTreeKeys": { "data": [{ "menuInfoId": "1" }, { "menuInfoId": "2" }] }
+  "MenuTreeKeys": {
+    "data": [
+      { "menuInfoId": "1" },
+      { "menuInfoId": "2" },
+      { "menuInfoId": "3" },
+      { "menuInfoId": "4" },
+      { "menuInfoId": "5" }
+    ]
+  }
 }

@@ -1,0 +1,16 @@
+<div class="content overflow-y-auto">
+  <input
+    style="visibility: hidden; width: 0"
+    id="file"
+    (change)="uploadFile($event, 'video')"
+    type="file"
+    accept="audio/mp4, video/mp4"
+    title="" />
+  <div class="editor">
+    <div
+      id="editor"
+      style="height: calc(100% - 80px)">
+      <p><br /></p>
+    </div>
+  </div>
+</div>
